@@ -42,9 +42,9 @@ public class MarkerController {
     }
 
     //update marker
-    @PutMapping("/marker")
-    public Marker updateMarkerById(@RequestBody Marker marker) {
-        return markerService.updateMarker(marker);
+    @PutMapping("/marker/{id}")
+    public ResponseEntity<Marker> updateMarkerById(@PathVariable Integer id, @RequestBody Marker marker) {
+        return markerService.updateMarker(id, marker);
     }
 
     //delete marker

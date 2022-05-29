@@ -38,14 +38,15 @@ public class MarkerService {
 
     //update marker by id
     @Transactional
-    public Marker updateMarker(Marker updateMarker) {
-        Integer markerId = updateMarker.getMarkerId();
-        Marker marker = markerRepository.findById(markerId).get();
+    public ResponseEntity<Marker> updateMarker(Integer id, Marker updateMarker) {
+        Marker marker =  markerRepository.findById(id).get();
         marker.setIsDanger(updateMarker.getIsDanger());
         marker.setMarkerInform(updateMarker.getMarkerInform());
         marker.setMarkerCategory(updateMarker.getMarkerCategory());
         marker.setImageUrl(updateMarker.getImageUrl());
-        return marker;
+
+        Marker endUpdatedMarker = markerRepository.save(marker);
+        return ResponseEntity.ok(endUpdatedMarker);
     }
 
     public void deleteMarker(Integer id) {
