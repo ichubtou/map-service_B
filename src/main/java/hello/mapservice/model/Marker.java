@@ -50,7 +50,5 @@ public class Marker {
     @Column(name = "poster_nickname")
     private String posterNickName;
 
-// ---Getter/Setter ---
-
 }
 
