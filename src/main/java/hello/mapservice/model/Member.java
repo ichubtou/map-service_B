@@ -38,7 +38,7 @@ public class Member {
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
     private Authority authority;
-    
+
     @Builder
     public Member(Long id, String password, String userName, String nickName, String memberId, Long memberRole, Authority authority) {
         this.id = id;
