@@ -67,7 +67,6 @@ public class MarkerController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return result;
     }
 
@@ -76,10 +75,8 @@ public class MarkerController {
     public void deleteFileByFileName(@PathVariable String fileName) {
         File file = new File("/Users/kimminsoo/Downloads/map-service/src/main/resources/static/image/" + fileName);
 
-        if(file.exists()) {
+        if (file.exists()) {
             file.delete();
         }
     }
-
-    
 }
